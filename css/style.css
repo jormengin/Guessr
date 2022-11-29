@@ -23,14 +23,6 @@
   display: none;
 }
 
-canvas {
-  border: 1px solid black;
-  display: block;
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-
 /* Auxiliar classes */
 
 .hidden {

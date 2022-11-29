@@ -13,8 +13,39 @@
     <main>
       <h1>Title of the game</h1>
       <p>Instructions / Description</p>
-      <button id="start">START</button>
+      <button id="start" onclick="newgame.start()">START</button>
     </main>
+  </div>
+
+  <div id="main-page" class="hidden">
+    <div id="left-page">
+      <h2>Instructions</h2>
+      <p>blah blah blah blah</p>
+      <div id="discard-buttons">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>0</li>
+        </ul>
+      </div>
+    </div>
+      <main>
+        <h1>Results</h1>
+        <div class="guess-box">
+           <input class="guess-input" id="guess-input" type="number" />
+           <button id="guess-btn" onclick="newgame.checkAttempt()">Try to guess!</button>
+        </div>
+      </main>
+    <div id="right-page">
+      <h4>Attempts: <span id="attempts-user">0</span></h4>
+    </div>
   </div>
 
     <div id="lose-page">
@@ -22,9 +53,6 @@
       <h1>YOU LOSE SUCKER</h1>
     </main>
   </div>
-
-  <canvas id="canvas" width="1000" height="600" class="hidden"></canvas>
-
   <script src="js/game.js"></script>
   <script src="js/scripts.js"></script>
 </body>
