@@ -4,7 +4,11 @@ class Game {
     this.maxAttempts = maxAttempts;
     this.userAttempts = 0;
     this.userScore = 0;
-    this.id = 1;
+    this.id = 0;
+    this.tbody = document.getElementById('solution-table');
+    this.mates = 0;
+    this.checks = 0;
+    this.guesses = 0;
   }
 
   start() {
@@ -15,15 +19,15 @@ class Game {
 
   checkAttempt() {
     this.userAttempts++;
-    let mates = 0;
-    let checks = 0;
-    const guesses = document
+    this.mates = 0;
+    this.checks = 0;
+    this.guesses = document
       .getElementsByClassName("guess-input")[0]
       .value.split("");
-    const guessArr = guesses.map((str) => {
+    const guessArr = this.guesses.map((str) => {
       return Number(str);
     });
-    if (guesses.length !== 4) {
+    if (this.guesses.length !== 4) {
       alert("Introduce a valid number!");
       return
     }
@@ -32,25 +36,25 @@ class Game {
         this.secretNumber.includes(guessArr[i]) &&
         this.secretNumber[i] === guessArr[i]
       ) {
-        mates++;
+        this.mates++;
       } else if (this.secretNumber.includes(guessArr[i])) {
-        checks++;
+        this.checks++;
       } 
-      console.log(`Mates:${mates}, Checks:${checks}`);
+      console.log(`${this.guesses} Mates:${this.mates}, Checks:${this.checks}`);
     }
-    if (mates === 4) {
+    if (this.mates === 4) {
       alert("Omg you win 🎉🎉!");
     }
-    this._createNewRow();
     document.getElementById("attempts-user").innerHTML = this.userAttempts;
+    this._createNewRow();
     this._checkIfLost();
   }
   _createNewRow() {
-  id = id + 1;
+  this.id = this.id + 1;
   const newRow = document.createElement('tr');
-  newRow.id = id;
-  newRow.innerHTML = `Mates:${mates}, Checks:${checks}`
-  tbody.appendChild(newRow);
+  newRow.id = this.id;
+  newRow.innerHTML = `${this.guesses.join('')} Mates:${this.mates}, Checks:${this.checks}`
+  this.tbody.appendChild(newRow);
 }
   _generateRandomNumber() {
     const arrNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
