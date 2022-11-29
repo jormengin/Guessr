@@ -1,13 +1,18 @@
 window.onload = function () {
-  const canvas = document.getElementById('canvas');
-  const ctx = canvas.getContext('2d');
-  const startPage = document.getElementById('start-page');
-  const startButton = document.getElementById('start');
-  
+  const canvas = document.getElementById("canvas");
+  // delete canvas
+  //const ctx = canvas.getContext("2d");
+  const startPage = document.getElementById("start-page");
+  const startButton = document.getElementById("start");
+  const guessButton = document.getElementById("guess-btn");
+
   startButton.onclick = function () {
     startPage.style = "display: none";
-    canvas.classList.remove('hidden');
-    const game = new Game(ctx);
+    document.getElementById("main-page").classList.toggle("shown");
+    const game = new Game();
+    guessButton.onclick = function () {
+      game.checkAttempt();
+    };
     game.start();
-  }
-}
+  };
+};
