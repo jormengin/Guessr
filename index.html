@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="reset" href="css/reset.css" />  
     <link rel="stylesheet" href="css/style.css" />
     <title>Guesslr</title>
   </head>
@@ -19,8 +20,13 @@
     <div id="main-page" class="hidden">
       <div id="left-page">
         <h2>Instructions</h2>
-        <p>blah blah blah blah</p>
-        <div id="discard-buttons">
+        <p>The goal is to guess a randomly generated four digit number.</p>
+        <p>You have a total of ten tries, or you will automatically lose.</p>
+        <p>The numbers are unique, cannot be repeated.</p>
+        <p>1 Mate = correct number and correct position</p>
+        <p>1 Check = correct number and incorrect position.</p>
+        <p>GoodLuck!.</p>
+        <div id="discard-buttons-container">
           <ul>
             <li>1</li>
             <li>2</li>
@@ -37,24 +43,27 @@
       </div>
       <main class="central-page">
         <h1>Results</h1>
-        <table>
-          <tbody id="solution-table">
-            <tr id="headingRow">
-               <th>Your guess</th>
-              <th>output</th>
-            </tr>
-            <tr id="0">
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-container">
+          <table>
+            <tbody id="solution-table">
+              <tr id="headingRow">
+                <th>Your guess</th>
+                <th>output</th>
+              </tr>
+              <tr id="0"></tr>
+            </tbody>
+          </table>
+        </div>
         <div class="guess-box">
-          <input class="guess-input" id="guess-input" type="number" />
+          <input class="guess-input" id="guess-input" type="number" maxlength="4" />
           <!-- llevar este onclick al script.js -->
           <button id="guess-btn">Try to guess!</button>
         </div>
       </main>
       <div id="right-page">
         <h4>Attempts: <span id="attempts-user">0</span></h4>
+        <textarea id="notes-input" name="notes-input" rows="10"></textarea>
+        <button id="restart-btn">Restart!</button>
       </div>
     </div>
 

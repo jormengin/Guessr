@@ -12,11 +12,10 @@ class Game {
   }
 
   start() {
-    console.log("holi start");
     this._generateRandomNumber();
     document.getElementById("start-page").style = "display: none";
   }
-
+  
   checkAttempt() {
     this.userAttempts++;
     this.mates = 0;
@@ -53,7 +52,7 @@ class Game {
   this.id = this.id + 1;
   const newRow = document.createElement('tr');
   newRow.id = this.id;
-  newRow.innerHTML = `${this.guesses.join('')} Mates:${this.mates}, Checks:${this.checks}`
+  newRow.innerHTML = `${this.guesses.join('')}      Mates:${this.mates} Checks:${this.checks}`
   this.tbody.appendChild(newRow);
 }
   _generateRandomNumber() {
