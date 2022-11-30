@@ -43,10 +43,11 @@ html {
   padding:0;
   width:25vw;
 }
-#main-page{
+#pages{
   display:flex;
-  justify-content: space-between;
-  padding:0 30px;
+  justify-content:space-between;
+  padding:0 40px;
+  width:100%;
 }
 /* START PAGE */
 #start-page{
@@ -64,6 +65,11 @@ nav {
 }
 #h1nav{
 font-size: 4rem;
+letter-spacing: 1rem;
+display: inline-block;
+border-bottom: 2px solid #616060 ;
+padding: 0;
+margin-bottom: 10px;
 }
 /* HERE STARTS THE CSS OF THE BUTTONS */
 input::-webkit-outer-spin-button,
@@ -85,7 +91,8 @@ input::-webkit-inner-spin-button {
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
-    margin:10px;
+    padding:0.6em 1.45em 0.7em;
+    margin: 10px 0;
 }
 #restart-btn:hover, #guess-btn:hover, #start:hover {
     background-color: #79d2ae;
@@ -104,7 +111,28 @@ input::-webkit-inner-spin-button {
   color:#616060
 }
 /* LEFT SIDE */
+#left-page{
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 25vw;
+    align-items: baseline;
 
+}
+#instructions-container {
+  height: auto;
+  width: 20vw;
+  background: #fff;
+  color: #525865;
+  border-radius: 15px;
+  border: 1px solid #d1d1d1;
+  box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  outline: none;
+  padding: 1em 1.45em 1em;
+}
 ul {
   list-style-type: none;
   display : flex;
@@ -117,11 +145,17 @@ ul li{
   border: 2px;
   border-style: solid;
   border-radius: 10px;
-  max-height: 3vh;
-  margin:10px;
+  max-height: 2vh;
+  margin:7px;
+}
+#discard-buttons-container {
+  display: flex;
+  max-height: 50vh;
+  width: 10vw;
+  margin-bottom: 20px;
 }
 .discard-btn{
-  padding: 1.3em 3em;
+  padding: 1em 2em;
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 2.5px;
@@ -134,17 +168,25 @@ ul li{
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
-    width: 10px;
+    width: 45%;
+    text-align: center;
 }
-#discard-buttons-container{
-  display:flex;
-  max-height: 60vh;
-  width: 10vw;
-  margin-bottom: 20px;
+.discard-btn:hover{
+      background-color: #e68b90;
+      box-shadow: 0px 15px 20px rgba(180, 83, 83, 0.4);
+      color: rgb(249, 242, 242);
+      transform: translateY(-7px);
+}
+.discard-btn:focus{
+  background-color: #e68b90;
+  box-shadow: 0px 15px 20px rgba(83, 180, 141, 0.4);
+  color: rgb(249, 242, 242);
+  transform: translateY(-7px);
 }
 
 /* CENTRAL PAGE*/
 #table-container{
+  height:55vh;
 }
 .central-page{
   display: flex;
@@ -184,17 +226,21 @@ ul li{
     border: 1px solid #B8B6B6;
     box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
  }
- td{
-  
- }
-
 /* RIGTH PAGE CSS */
+#right-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 25vw;
+  align-items: center;
+  padding:0;
+}
 #notes-input {
-  height: 60vh;
+  height: 50vh;
   width: 20vw;
-  ackground: #fff;
+  background: #fff;
     color: #525865;
-    border-radius: 45px;
+    border-radius: 15px;
     border: 1px solid #d1d1d1;
     box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
     font-family: inherit;
@@ -206,21 +252,14 @@ ul li{
     -moz-transition: .18s ease-out;
     -o-transition: .18s ease-out;
     transition: .18s ease-out;
+    margin-top: 15px;;
   }
   
-  input:hover {
+  #notes-input:hover {
     box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
   }
-  
-  input:focus {
+  #notes-input:focus {
     color: #4b515d;
     border: 1px solid #B8B6B6;
     box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
-}
-#right-page{
-  display:flex;
-  justify-content: center;
-  flex-direction: column;
-  max-width: 25vw;
-  align-items: center;
 }

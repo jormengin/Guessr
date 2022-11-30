@@ -6,7 +6,7 @@ window.onload = function () {
   const startButton = document.getElementById("start");
   const guessButton = document.getElementById("guess-btn");
   const restartButton = document.getElementById("restart-btn");
-  const discardBtn = document.getElementsByClassName("discard-btn");
+  const discardBtn = document.getElementsByTagName("li");
 
   startButton.onclick = function () {
     startPage.style = "display: none";
@@ -17,7 +17,6 @@ window.onload = function () {
     };
     game.start();
   };
-
   restartButton.onclick = function () {
     location.reload();
     startPage.style = "display: none";
@@ -25,9 +24,6 @@ window.onload = function () {
     return false;
   };
   discardBtn.onclick = function () {
-    console.log('discard button')
-    discardBtn.style.backgroundColor = "salmon";
-    discardBtn.style.backgroundColor = "black";
-    discardBtn.style.backgroundColor = "white";
+    
   };
 };

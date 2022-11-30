@@ -50,6 +50,7 @@ class Game {
     this._createNewRow();
     this._checkIfLost();
   }
+  
   _createNewRow() {
   this.id = this.id + 1;
   const newRow = document.createElement('tr');
