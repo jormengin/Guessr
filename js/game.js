@@ -9,12 +9,14 @@ class Game {
     this.mates = 0;
     this.checks = 0;
     this.guesses = 0;
+    this.discardBtn=document.getElementById('discard-btn')
   }
 
   start() {
     this._generateRandomNumber();
     document.getElementById("start-page").style = "display: none";
   }
+  
   
   checkAttempt() {
     this.userAttempts++;

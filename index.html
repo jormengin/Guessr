@@ -14,56 +14,56 @@
     </nav>
     <div id="start-page">
       <main>
-        <h1>Guess the number</h1>
-        <p>Instructions / Description</p>
+        <h1>Can you guess the number?</h1>
+        <p></p>
         <button id="start">START</button>
       </main>
     </div>
-
     <div id="main-page" class="hidden">
-      <div id="left-page">
-        <h2>Instructions</h2>
+      <div id="left-page" class="page">
+        <div id="instructions-container"><h2>Instructions</h2>
         <p>1) The goal is to guess a randomly generated four digit number.</p>
         <p>2) You have a total of ten tries, or you will automatically lose.</p>
         <p>3) The numbers are unique, cannot be repeated.</p>
-        <p>4) 1 Mate (M) = correct number and correct position</p>
-        <p>5) 1 Check (C) = correct number and incorrect position.</p>
+        <p>4) 1 Mate = 1 correct number and correct position</p>
+        <p>5) 1 Check = 1 correct number and incorrect position.</p>
         <p>GoodLuck!.</p>
+          </div>
         <div id="discard-buttons-container">
           <ul>
-            <li id="discard-btn">1</li>
-            <li id="discard-btn">2</li>
-            <li id="discard-btn">3</li>
-            <li id="discard-btn">4</li>
-            <li id="discard-btn">5</li>
-            <li id="discard-btn">6</li>
-            <li id="discard-btn">7</li>
-            <li id="discard-btn">8</li>
-            <li id="discard-btn">9</li>
-            <li id="discard-btn">0</li>
+            <li class="discard-btn">1</li>
+            <li class="discard-btn">2</li>
+            <li class="discard-btn">3</li>
+            <li class="discard-btn">4</li>
+            <li class="discard-btn">5</li>
+            <li class="discard-btn">6</li>
+            <li class="discard-btn">7</li>
+            <li class="discard-btn">8</li>
+            <li class="discard-btn">9</li>
+            <li class="discard-btn">0</li>
           </ul>
         </div>
       </div>
-      <main class="central-page">
-        <h1>Results</h1>
-        <div class="table-container">
+      <div id="central-page" class="page">
+        <h2>Results</h2>
+        <div id="table-container">
           <table>
             <tbody id="solution-table">
               <tr id="headingRow">
                 <th>Your guess</th>
                 <th>output</th>
               </tr>
-              <tr id="0"></tr>
+              <tr id="0" class="table-row"></tr>
             </tbody>
           </table>
         </div>
         <div class="guess-box">
-          <input class="guess-input" id="guess-input" type="number" maxlength="4" />
+          <input class="guess-input" id="guess-input" type="number" maxlength="4" placeholder="Type your guess"/>
           <!-- llevar este onclick al script.js -->
           <button id="guess-btn">Try to guess!</button>
         </div>
-      </main>
-      <div id="right-page">
+      </div>
+      <div id="right-page" class="page">
         <h4>Attempts: <span id="attempts-user">0</span></h4>
         <textarea id="notes-input" name="notes-input" rows="10"></textarea>
         <button id="restart-btn">Restart!</button>
