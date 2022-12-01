@@ -51,7 +51,8 @@
             <tbody id="solution-table">
               <tr id="headingRow">
                 <th>Your guess</th>
-                <th>output</th>
+                <th>Mates</th>
+                <th>Checks</th>
               </tr>
               <tr id="0" class="table-row"></tr>
             </tbody>
@@ -61,12 +62,17 @@
           <input class="guess-input" id="guess-input" type="number" maxlength="4" placeholder="Type your guess"/>
           <!-- llevar este onclick al script.js -->
           <button id="guess-btn">Try to guess!</button>
+          <button id="restart-btn">Restart!</button>
         </div>
       </div>
       <div id="right-page" class="page">
+        <h4>Score: <span id="score">0</span></h4>
         <h4>Attempts: <span id="attempts-user">0</span></h4>
         <textarea id="notes-input" name="notes-input" rows="10"></textarea>
-        <button id="restart-btn">Restart!</button>
+        <div id="High-Score-Table">
+        <h4>High Scores</h4>
+        <ol id="highScoresList"></ol>
+        </div>
       </div>
       </div>
     </div>

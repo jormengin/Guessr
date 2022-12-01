@@ -9,15 +9,17 @@ class Game {
     this.mates = 0;
     this.checks = 0;
     this.guesses = 0;
-    this.discardBtn=document.getElementById('discard-btn')
+    this.discardBtn = document.getElementById('discard-btn')
+    this.currentTime = 0;
+    this.intervalID = null;
+    this.score = 0;
   }
 
   start() {
     this._generateRandomNumber();
     document.getElementById("start-page").style = "display: none";
+    this._timer();
   }
-  
-  
   checkAttempt() {
     this.userAttempts++;
     this.mates = 0;
@@ -44,13 +46,24 @@ class Game {
       console.log(`${this.guesses} Mates:${this.mates}, Checks:${this.checks}`);
     }
     if (this.mates === 4) {
+      this._checkHighScore(this.score);
       alert("Omg you win 🎉🎉!");
     }
+    console.log(this.score);
+    this._getScore();
+    document.getElementById('score').innerHTML = this.score;
     document.getElementById("attempts-user").innerHTML = this.userAttempts;
     this._createNewRow();
     this._checkIfLost();
   }
-  
+  _timer() {
+    this.intervalID = setInterval(() => {
+      this.currentTime++;
+    },1000)
+  }
+  _getScore() {
+    this.score = this.currentTime * this.userAttempts*2;
+  }
   _createNewRow() {
   this.id = this.id + 1;
   const newRow = document.createElement('tr');
