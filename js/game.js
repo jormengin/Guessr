@@ -67,9 +67,17 @@ class Game {
   _createNewRow() {
   this.id = this.id + 1;
   const newRow = document.createElement('tr');
+  const newPlay = document.createElement('td');
+  const newMates = document.createElement('td');
+  const newChecks= document.createElement('td');
   newRow.id = this.id;
-  newRow.innerHTML = `${this.guesses.join('')}      Mates ${this.mates} Checks ${this.checks}`
-  this.tbody.appendChild(newRow);
+    newPlay.innerHTML = this.guesses.join('');
+    newMates.innerHTML = this.mates;
+    newChecks.innerHTML = this.checks;
+    newRow.appendChild(newPlay)
+    newRow.appendChild(newMates)
+    newRow.appendChild(newChecks);
+    this.tbody.appendChild(newRow);
 }
   _generateRandomNumber() {
     const arrNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];

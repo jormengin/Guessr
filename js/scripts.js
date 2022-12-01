@@ -6,6 +6,7 @@ window.onload = function () {
   const startButton = document.getElementById("start");
   const guessButton = document.getElementById("guess-btn");
   const restartButton = document.getElementById("restart-btn");
+  const restartButton2 = document.getElementById("restart-btn-lose");
   const discardBtn = document.getElementsByTagName("li");
 
   startButton.onclick = function () {
@@ -18,6 +19,12 @@ window.onload = function () {
     game.start();
   };
   restartButton.onclick = function () {
+    location.reload();
+    startPage.style = "display: none";
+    document.getElementById("main-page").classList.toggle("shown");
+    return false;
+  };
+  restartButton2.onclick = function () {
     location.reload();
     startPage.style = "display: none";
     document.getElementById("main-page").classList.toggle("shown");
