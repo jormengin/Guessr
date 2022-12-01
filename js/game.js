@@ -9,12 +9,11 @@ class Game {
     this.mates = 0;
     this.checks = 0;
     this.guesses = 0;
-    this.discardBtn = document.getElementById('discard-btn')
+    this.discardBtn = document.getElementsByClassName('discard-btn')[0];
     this.currentTime = 0;
     this.intervalID = null;
     this.score = 0;
   }
-
   start() {
     this._generateRandomNumber();
     document.getElementById("start-page").style = "display: none";
@@ -66,14 +65,17 @@ class Game {
   }
   _createNewRow() {
   this.id = this.id + 1;
-  const newRow = document.createElement('tr');
+    const newRow = document.createElement('tr');
+    const newTurn = document.createElement('td');
   const newPlay = document.createElement('td');
   const newMates = document.createElement('td');
-  const newChecks= document.createElement('td');
+  const newChecks = document.createElement('td');
   newRow.id = this.id;
     newPlay.innerHTML = this.guesses.join('');
+    newTurn.innerHTML = this.userAttempts;
     newMates.innerHTML = this.mates;
     newChecks.innerHTML = this.checks;
+    newRow.appendChild(newTurn);
     newRow.appendChild(newPlay)
     newRow.appendChild(newMates)
     newRow.appendChild(newChecks);

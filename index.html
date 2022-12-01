@@ -31,16 +31,16 @@
           </div>
         <div id="discard-buttons-container">
           <ul>
-            <li class="discard-btn">1</li>
-            <li class="discard-btn">2</li>
-            <li class="discard-btn">3</li>
-            <li class="discard-btn">4</li>
-            <li class="discard-btn">5</li>
-            <li class="discard-btn">6</li>
-            <li class="discard-btn">7</li>
-            <li class="discard-btn">8</li>
-            <li class="discard-btn">9</li>
-            <li class="discard-btn">0</li>
+            <li id="discard-btn-1" class="discard-btn white">1</li>
+            <li id="discard-btn-2" class="discard-btn white">2</li>
+            <li id="discard-btn-3" class="discard-btn white">3</li>
+            <li id="discard-btn-4" class="discard-btn white">4</li>
+            <li id="discard-btn-5" class="discard-btn white">5</li>
+            <li id="discard-btn-6" class="discard-btn white">6</li>
+            <li id="discard-btn-7" class="discard-btn white">7</li>
+            <li id="discard-btn-8" class="discard-btn white">8</li>
+            <li id="discard-btn-9" class="discard-btn white">9</li>
+            <li id="discard-btn-0" class="discard-btn white">0</li>
           </ul>
         </div>
       </div>
@@ -50,6 +50,7 @@
           <table id="styled-table">
             <tbody id="solution-table">
               <tr id="headingRow">
+                <th>Turn</th>
                 <th>Your guess</th>
                 <th>Mates</th>
                 <th>Checks</th>
@@ -59,8 +60,7 @@
           </table>
         </div>
         <div class="guess-box">
-          <input class="guess-input" id="guess-input" type="number" maxlength="4" placeholder="Type your guess"/>
-          <!-- llevar este onclick al script.js -->
+          <input class="guess-input" id="guess-input" type="number" maxlength="4" placeholder="* * * *"/>
           <button id="guess-btn">Try to guess!</button>
           <button id="restart-btn">Restart!</button>
         </div>
@@ -68,21 +68,16 @@
       <div id="right-page" class="page">
         <h4>Score: <span id="score">0</span></h4>
         <h4>Attempts: <span id="attempts-user">0</span></h4>
-        <textarea id="notes-input" name="notes-input" rows="10"></textarea>
-        <div id="High-Score-Table">
-        <h4>High Scores</h4>
-        <ol id="highScoresList"></ol>
+        <textarea id="notes-input" name="notes-input" rows="10" placeholder="Take your notes here"></textarea>
         </div>
       </div>
       </div>
     </div>
 
     <div id="lose-page">
-      <main id="lose-box">
         <h1>YOU LOSE LMAO</h1>
         <img id="lose-img" src="https://media.tenor.com/SwPnvd4lvLkAAAAd/stupid-yoda.gif">
         <button id="restart-btn-lose">Restart!</button>
-      </main>
     </div>
     <script src="js/game.js"></script>
     <script src="js/scripts.js"></script>

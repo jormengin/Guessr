@@ -7,7 +7,8 @@ window.onload = function () {
   const guessButton = document.getElementById("guess-btn");
   const restartButton = document.getElementById("restart-btn");
   const restartButton2 = document.getElementById("restart-btn-lose");
-  const discardBtn = document.getElementsByTagName("li");
+  const discardBtn = document.getElementsByClassName("discard-btn");
+  var arrButtons = [...discardBtn];
 
   startButton.onclick = function () {
     startPage.style = "display: none";
@@ -30,7 +31,27 @@ window.onload = function () {
     document.getElementById("main-page").classList.toggle("shown");
     return false;
   };
-  discardBtn.onclick = function () {
-    
-  };
+  arrButtons.forEach((element) => {
+    element.addEventListener("click", () => {
+      console.log('click');
+      console.log(element);
+      if (element.classList.contains('white')) {
+        element.classList.replace('white', 'red')
+      } else if (element.classList.contains('red')) {
+        element.classList.replace('red', 'green')
+      } else {
+        element.classList.replace('green', 'white')
+      }
+    });
+  })
+  // discardBtn.onclick = function () {
+  //   console.log('click');
+  //   if (discardBtn.classList.contains('white')) {
+  //     discardBtn.classList.replace('white', 'red')
+  //   } else if (discardBtn.classList.contains('red')) {
+  //     discardBtn.classList.replace('red', 'green')
+  //   } else {
+  //     discardBtn.classList.replace('green','white')
+  //   }
+  // }
 };
