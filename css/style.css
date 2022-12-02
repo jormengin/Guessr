@@ -100,7 +100,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-#restart-btn, #guess-btn,#start{
+#word-start-btn,#guess-btn-words,#restart-btn, #guess-btn,#start{
   padding: 1.3em 3em;
     font-size: 1rem;
     text-transform: uppercase;
@@ -117,7 +117,7 @@ input::-webkit-inner-spin-button {
     padding:0.6em 1.45em 0.7em;
     margin: 10px 0;
 }
-#restart-btn-lose:hover,#restart-btn:hover, #guess-btn:hover, #start:hover {
+#word-start-btn:hover,#guess-btn-words:hover,#restart-btn-lose:hover,#restart-btn:hover, #guess-btn:hover, #start:hover {
     background-color: #79d2ae;
     box-shadow: 0px 15px 20px rgba(83, 180, 141, 0.4);
     color: rgb(249, 242, 242);
@@ -129,12 +129,12 @@ input::-webkit-inner-spin-button {
   color: rgb(249, 242, 242);
   transform: translateY(-7px);
 }
-#restart-btn-lose,#restart-btn:hover,
+#word-start-btn:hover,#restart-btn-lose,#restart-btn:hover,
 #guess-btn:hover,
 #start:hover {
  transform: translateY(-1px);
 }
-#start{
+#word-start-btn,#start{
   font-size: 2rem;
   font-weight: bolder;
   color:#616060;
@@ -270,7 +270,7 @@ ul li{
   border-style: solid;
 }
 .green:focus {
-  background-color: #f5f5f5
+  background-color: #f5f5f5;
   box-shadow: 0px 15px 20px #d1d1d1;
   color: rgb(249, 242, 242);
   transform: translateY(-7px);
@@ -381,4 +381,78 @@ h2{
     color: #4b515d;
     border: 1px solid #B8B6B6;
     box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* WORDL STYLING */
+#wordl-page{
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#wordl-title {
+  margin: 20px 0;
+  text-align: center;
+}
+#game-board {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#word-input{
+  margin-top: 20px;
+  background: #fff;
+    color: #525865;
+    border-radius: 45px;
+    border: 1px solid #d1d1d1;
+    box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+    max-width: 20vw;
+    font-family: inherit;
+    font-size: 1.5em;
+    line-height: 1.45;
+    outline: none;
+    padding: 0.6em 1em 0.7em;
+    -webkit-transition: .18s ease-out;
+    -moz-transition: .18s ease-out;
+    -o-transition: .18s ease-out;
+    transition: .18s ease-out;
+    text-align: center;
+}
+#guess-btn-words {
+  padding: 1em 1em;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #616060;
+  background-color: rgb(254, 251, 251);
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  padding: 0.6em 1.45em 0.7em;
+  margin: 10px 0;
+  width: 20vw;
+}
+.letter-box {
+  border: 2px solid gray;
+  border-radius: 3px;
+  margin: 2px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.filled-box {
+  border: 2px solid black;
+}
+
+.letter-row {
+  display: flex;
 }

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="reset" href="css/reset.css" />  
     <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+    <link
+    rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Guesslr</title>
   </head>
   <body>
@@ -16,7 +21,8 @@
       <main>
         <h1>Can you guess the number?</h1>
         <p></p>
-        <button id="start">START</button>
+        <button id="start">START NUMBERS</button>
+        <button id="word-start-btn">START WORDS</button>
       </main>
     </div>
     <div id="main-page" class="hidden">
@@ -44,6 +50,7 @@
           </ul>
         </div>
       </div>
+      <!-- CENTRAL PAGE NUMBERS -->
       <div id="central-page" class="page">
         <h2>Results</h2>
         <div id="table-container">
@@ -73,13 +80,62 @@
       </div>
       </div>
     </div>
+    <!-- WORDL PAGE -->
+     <div id="wordl-page" class="hidden">
+        <h1 id="wordl-title">Can you guess the word?</h1>
+        <div id="game-board">
+          <div class="letter-row" id="letter-row-1">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div></div>
+          <div class="letter-row" id="letter-row-2">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div></div>
+        <div class="letter-row" id="letter-row-3">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div></div>
+        <div class="letter-row" id="letter-row-4">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div></div>
+        <div class="letter-row" id="letter-row-5">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div></div>
+        <div class="letter-row" id="letter-row-6">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div></div>
+          
+        </div>
+        <input class="word-input" id="word-input" type="text" maxlength="5" placeholder="*    *    *    *    *"/>
+        <button id="guess-btn-words">Try to guess!</button>
+    </div>
 
+    <!-- LOSE PAGE -->
     <div id="lose-page">
         <h1>YOU LOSE LMAO</h1>
         <img id="lose-img" src="https://media.tenor.com/SwPnvd4lvLkAAAAd/stupid-yoda.gif">
         <button id="restart-btn-lose">Restart!</button>
     </div>
     <script src="js/game.js"></script>
+    <script src="js/wordldata.js"></script>
+    <script src="js/wordl.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   </body>
 </html>

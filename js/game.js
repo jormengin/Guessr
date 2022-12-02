@@ -5,11 +5,11 @@ class Game {
     this.userAttempts = 0;
     this.userScore = 0;
     this.id = 0;
-    this.tbody = document.getElementById('solution-table');
+    this.tbody = document.getElementById("solution-table");
     this.mates = 0;
     this.checks = 0;
     this.guesses = 0;
-    this.discardBtn = document.getElementsByClassName('discard-btn')[0];
+    this.discardBtn = document.getElementsByClassName("discard-btn")[0];
     this.currentTime = 0;
     this.intervalID = null;
     this.score = 0;
@@ -19,6 +19,7 @@ class Game {
     document.getElementById("start-page").style = "display: none";
     this._timer();
   }
+ 
   checkAttempt() {
     this.userAttempts++;
     this.mates = 0;
@@ -31,7 +32,7 @@ class Game {
     });
     if (this.guesses.length !== 4) {
       alert("Introduce a valid number!");
-      return
+      return;
     }
     for (let i = 0; i < guessArr.length; i++) {
       if (
@@ -41,46 +42,49 @@ class Game {
         this.mates++;
       } else if (this.secretNumber.includes(guessArr[i])) {
         this.checks++;
-      } 
-      console.log(`${this.guesses} Mates:${this.mates}, Checks:${this.checks}`);
-    }
-    if (this.mates === 4) {
-      this._checkHighScore(this.score);
-      alert("Omg you win 🎉🎉!");
+      }
     }
     console.log(this.score);
     this._getScore();
-    document.getElementById('score').innerHTML = this.score;
+    document.getElementById("score").innerHTML = this.score;
     document.getElementById("attempts-user").innerHTML = this.userAttempts;
     this._createNewRow();
+    this._checkIfWin();
     this._checkIfLost();
+  }
+  _checkIfWin() {
+    if (this.mates === 4) {
+      alert("Omg you win 🎉🎉!");
+      this.secretNumber = [];
+      this.start();
+    }
   }
   _timer() {
     this.intervalID = setInterval(() => {
       this.currentTime++;
-    },1000)
+    }, 1000);
   }
   _getScore() {
-    this.score = this.currentTime * this.userAttempts*2;
+    this.score = this.currentTime * this.userAttempts * 2;
   }
   _createNewRow() {
-  this.id = this.id + 1;
-    const newRow = document.createElement('tr');
-    const newTurn = document.createElement('td');
-  const newPlay = document.createElement('td');
-  const newMates = document.createElement('td');
-  const newChecks = document.createElement('td');
-  newRow.id = this.id;
-    newPlay.innerHTML = this.guesses.join('');
+    this.id = this.id + 1;
+    const newRow = document.createElement("tr");
+    const newTurn = document.createElement("td");
+    const newPlay = document.createElement("td");
+    const newMates = document.createElement("td");
+    const newChecks = document.createElement("td");
+    newRow.id = this.id;
+    newPlay.innerHTML = this.guesses.join("");
     newTurn.innerHTML = this.userAttempts;
     newMates.innerHTML = this.mates;
     newChecks.innerHTML = this.checks;
     newRow.appendChild(newTurn);
-    newRow.appendChild(newPlay)
-    newRow.appendChild(newMates)
+    newRow.appendChild(newPlay);
+    newRow.appendChild(newMates);
     newRow.appendChild(newChecks);
     this.tbody.appendChild(newRow);
-}
+  }
   _generateRandomNumber() {
     const arrNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     for (let i = 0; i < 4; i++) {
