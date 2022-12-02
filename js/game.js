@@ -54,6 +54,8 @@ class Game {
   }
   _checkIfWin() {
     if (this.mates === 4) {
+      document.getElementById("main-page").style = "display: none";
+      document.getElementById("win-page").style = "display:flex";
       alert("Omg you win 🎉🎉!");
       this.secretNumber = [];
       this.start();
