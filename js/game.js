@@ -47,7 +47,6 @@ class Game {
     console.log(this.score);
     this._getScore();
     document.getElementById("score").innerHTML = this.score;
-    document.getElementById("attempts-user").innerHTML = this.userAttempts;
     this._createNewRow();
     this._checkIfWin();
     this._checkIfLost();

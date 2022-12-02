@@ -135,7 +135,7 @@ input::-webkit-inner-spin-button {
  transform: translateY(-1px);
 }
 #word-start-btn,#start{
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   color:#616060;
   margin-bottom: 30vh;
@@ -352,6 +352,9 @@ h2{
   align-items: center;
   padding:0;
   margin-bottom: 20vh;
+}
+#score{
+  font-size: 1.2rem;
 }
 
 #notes-input {
