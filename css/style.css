@@ -100,7 +100,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-#restart-btn-win,#word-start-btn,#guess-btn-words,#restart-btn, #guess-btn,#start{
+#word-start-btn,#guess-btn-words,#restart-btn, #guess-btn,#start{
   padding: 1.3em 3em;
     font-size: 1rem;
     text-transform: uppercase;
@@ -117,7 +117,7 @@ input::-webkit-inner-spin-button {
     padding:0.6em 1.45em 0.7em;
     margin: 10px 0;
 }
-#restart-btn-win:hover,#word-start-btn:hover,#guess-btn-words:hover,#restart-btn-lose:hover,#restart-btn:hover, #guess-btn:hover, #start:hover {
+#word-start-btn:hover,#guess-btn-words:hover,#restart-btn-lose:hover,#restart-btn:hover, #guess-btn:hover, #start:hover {
     background-color: #79d2ae;
     box-shadow: 0px 15px 20px rgba(83, 180, 141, 0.4);
     color: rgb(249, 242, 242);
@@ -129,7 +129,7 @@ input::-webkit-inner-spin-button {
   color: rgb(249, 242, 242);
   transform: translateY(-7px);
 }
-#restart-btn-win:hover,#word-start-btn:hover,#restart-btn-lose:hover,#restart-btn:hover,
+#word-start-btn:hover,#restart-btn-lose:hover,#restart-btn:hover,
 #guess-btn:hover,
 #start:hover {
  transform: translateY(-1px);

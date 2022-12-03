@@ -42,9 +42,10 @@ window.onload = function () {
     document.getElementById("main-page").classList.toggle("shown");
     return false;
   };
-  // restartButtonWin.onclick = function () {
-  //   location.reload();
-  // }
+  restartButtonWin.onclick = function () {
+    location.reload();
+  }
+  
   arrButtons.forEach((element) => {
     element.addEventListener("click", () => {
       console.log('click');
