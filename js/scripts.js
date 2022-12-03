@@ -13,11 +13,11 @@ window.onload = function () {
   startButton.onclick = function () {
     startPage.style = "display: none";
     document.getElementById("main-page").classList.toggle("shown");
-    const game = new Game();
+    const numberGame = new NumberGame();
     guessButton.onclick = function () {
-      game.checkAttempt();
+      numberGame.checkAttempt();
     };
-    game.start();
+    numberGame.start();
   }
   
   wordStartButton.onclick = function () {
@@ -45,7 +45,7 @@ window.onload = function () {
   restartButtonWin.onclick = function () {
     location.reload();
   }
-  
+
   arrButtons.forEach((element) => {
     element.addEventListener("click", () => {
       console.log('click');
