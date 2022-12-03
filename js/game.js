@@ -13,6 +13,7 @@ class Game {
     this.currentTime = 0;
     this.intervalID = null;
     this.score = 0;
+    this.lowestScore = 0;
   }
   start() {
     this._generateRandomNumber();
@@ -44,7 +45,6 @@ class Game {
         this.checks++;
       }
     }
-    console.log(this.score);
     this._getScore();
     document.getElementById("score").innerHTML = this.score;
     this._createNewRow();

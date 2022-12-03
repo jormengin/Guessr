@@ -5,8 +5,9 @@ window.onload = function () {
   const wordGuessButton = document.getElementById('guess-btn-words');
   const restartButton = document.getElementById("restart-btn");
   const restartButton2 = document.getElementById("restart-btn-lose");
+  const restartButtonWin = document.getElementById('restart-btn-win');
   const discardBtn = document.getElementsByClassName("discard-btn");
-  const wordStartButton = document.getElementById('word-start-btn')
+  const wordStartButton = document.getElementById('word-start-btn');
   var arrButtons = [...discardBtn];
 
   startButton.onclick = function () {
@@ -22,7 +23,7 @@ window.onload = function () {
   wordStartButton.onclick = function () {
     startPage.style = "display: none";
     document.getElementById("wordl-page").classList.toggle("shown");
-    const wordGame = new Game();
+    const wordGame = new Wordle();
     wordGuessButton.onclick = function () {
       wordGame.checkWord();
     };
@@ -41,6 +42,9 @@ window.onload = function () {
     document.getElementById("main-page").classList.toggle("shown");
     return false;
   };
+  // restartButtonWin.onclick = function () {
+  //   location.reload();
+  // }
   arrButtons.forEach((element) => {
     element.addEventListener("click", () => {
       console.log('click');
