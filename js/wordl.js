@@ -51,9 +51,10 @@ class Wordle extends Game {
           }
        }
        console.log(this.userWordToPrint);
-        this._checkIfWinWords();
-        this._checkIfLostWords();
-      }
+       this._checkIfWinWords();
+       
+     }
+      this._checkIfLostWords();
     }
    _insertWord() {
       this.letterPosition = 0;
@@ -71,17 +72,22 @@ class Wordle extends Game {
     const randomIndex = Math.floor(Math.random() * wordsArray.length);
     this.secretWord = wordsArray[randomIndex].toUpperCase();
     this.secretWordArr = this.secretWord.split("");
+    console.log(this.secretWord);
   }
   _checkIfWinWords() {
+    console.log(
+      `the number of correct guesses is ${this.numberCorrectGuesses} before check if lost`
+    );
     if (this.numberCorrectGuesses === 5) {
       document.getElementById("wordl-page").style = "display: none";
       document.getElementById("win-page").style = "display:flex";
-
       this.wordStart();
+      return;
     }
   }
   _checkIfLostWords() {
-    if (this.numberOfGuesses === 0) {
+    console.log('im checkiflost making your life miserable');
+    if (this.numberOfGuesses === 0 && this.numberCorrectGuesses!==5) {
       document.getElementById("wordl-page").style = "display: none";
       document.getElementById("lose-page").style = "display:flex";
       this.wordStart();
