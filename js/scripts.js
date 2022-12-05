@@ -1,17 +1,25 @@
 window.onload = function () {
   const startPage = document.getElementById("start-page");
+  const difficultyPage = document.getElementById('select-difficulty-page');
+  const languagePage = document.getElementById("select-language-page-words");
+  
   const startButton = document.getElementById("start");
   const guessButton = document.getElementById("guess-btn");
   const wordGuessButton = document.getElementById('guess-btn-words');
   const restartButton = document.getElementById("restart-btn");
+  const difficultButton = document.getElementById("difficult-btn");
+  const selectLanguageBtn = document.getElementById("select-language-btn");
   const restartButton2 = document.getElementById("restart-btn-lose");
   const restartButtonWin = document.getElementById('restart-btn-win');
   const discardBtn = document.getElementsByClassName("discard-btn");
   const wordStartButton = document.getElementById('word-start-btn');
+  const wordStartBtnSpanish = document.getElementById("spanish-btn");
+  const restartButtonDifficulty = document.getElementById('restart-difficulty');
+  const selectDifficultyBtn = document.getElementById('select-difficulty-btn');
   var arrButtons = [...discardBtn];
 
   startButton.onclick = function () {
-    startPage.style = "display: none";
+    difficultyPage.style = "display: none";
     document.getElementById("main-page").classList.toggle("shown");
     const numberGame = new NumberGame();
     guessButton.onclick = function () {
@@ -19,9 +27,31 @@ window.onload = function () {
     };
     numberGame.start();
   }
-  
-  wordStartButton.onclick = function () {
+
+  difficultButton.onclick = function () {
+    difficultyPage.style = "display:none";
+    document.getElementById("main-page").classList.toggle("shown");
+    const numberGame = new NumberGame();
+    guessButton.onclick = function () { 
+      numberGame.checkAttempt2();
+    }
+    numberGame.start();
+  }
+  selectDifficultyBtn.onclick = function () {
     startPage.style = "display: none";
+    document.getElementById("select-difficulty-page").classList.toggle("shown");
+    return false;
+  };
+  selectLanguageBtn.onclick = function () {
+    console.log('pipi');
+  startPage.style = "display: none";
+  document
+    .getElementById("select-language-page-words")
+    .classList.toggle("shown");
+  return false;
+}
+  wordStartButton.onclick = function () {
+    languagePage.style = "display: none";
     document.getElementById("wordl-page").classList.toggle("shown");
     const wordGame = new Wordle();
     wordGuessButton.onclick = function () {
@@ -29,7 +59,15 @@ window.onload = function () {
     };
     wordGame.wordStart();
   }
-  
+  wordStartBtnSpanish.onclick = function () {
+    languagePage.style = "display: none";
+    document.getElementById("wordl-page").classList.toggle("shown");
+    const wordGame = new Wordle();
+    wordGuessButton.onclick = function () {
+      wordGame.checkWord();
+    };
+    wordGame.wordStartSpanish();
+  };
   restartButton.onclick = function () {
     location.reload();
     startPage.style = "display: none";
@@ -44,7 +82,17 @@ window.onload = function () {
   };
   restartButtonWin.onclick = function () {
     location.reload();
+    startPage.style = "display: none";
+    document.getElementById("main-page").classList.toggle("shown");
+    return false;
   }
+  restartButtonDifficulty.onclick = function () {
+    location.reload();
+   
+    document.getElementById("main-page").classList.toggle("shown");
+    return false;
+  };
+  
 
   arrButtons.forEach((element) => {
     element.addEventListener("click", () => {

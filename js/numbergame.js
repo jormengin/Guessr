@@ -9,19 +9,16 @@ class NumberGame extends Game {
     this.checks = 0;
     this.guesses = 0;
     this.discardBtn = document.getElementsByClassName("discard-btn")[0];
-    this.solutions = '';
-    this.correctNumbers=0;
+    this.solutions = "";
   }
   start() {
     this._generateRandomNumber();
     document.getElementById("start-page").style = "display: none";
     this._timer();
   }
-
   checkAttempt() {
-    this.correctNumbers = 0;
+    this.solutions = "";
     this.userAttempts++;
-    this.solutions = '';
     this.guesses = document
       .getElementsByClassName("guess-input")[0]
       .value.split("");
@@ -45,15 +42,52 @@ class NumberGame extends Game {
         this.solutions += "🔴";
       }
     }
-    console.log(this.correctNumbers);
     this._getScore();
     document.getElementById("score").innerHTML = this.score;
     this._createNewRow();
     this._checkIfWin();
     this._checkIfLost();
   }
+  ///////
+
+  checkAttempt2() {
+    this.mates = 0;
+    this.checks = 0;
+    this.userAttempts++;
+    this.guesses = document
+      .getElementsByClassName("guess-input")[0]
+      .value.split("");
+    const guessArr = this.guesses.map((str) => {
+      return Number(str);
+    });
+    if (this.guesses.length !== 4) {
+      alert("Introduce a valid number!");
+      return;
+    }
+    for (let i = 0; i < guessArr.length; i++) {
+      if (
+        this.secretNumber.includes(guessArr[i]) &&
+        this.secretNumber[i] === guessArr[i]
+      ) {
+        this.mates++;
+        this.correctNumbers++;
+        console.log(this.mates)
+      } else if (this.secretNumber.includes(guessArr[i])) {
+        this.checks++;
+        console.log(this.checks)
+      } 
+      this.solutions = `🟢${this.mates} 🟡${this.checks}`;
+    }
+    this._getScore();
+    document.getElementById("score").innerHTML = this.score;
+    this._createNewRow();
+    this._checkIfWin();
+    this._checkIfLost();
+  }
+
+  ////////
   _checkIfWin() {
-    if (this.correctNumbers === 4) {
+    if (this.mates === 4) {
       document.getElementById("main-page").style = "display: none";
       document.getElementById("win-page").style = "display:flex";
       this.secretNumber = [];

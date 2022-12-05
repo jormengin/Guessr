@@ -41,7 +41,7 @@ html {
 }
 .page {
   margin:15px 40px;
-  width:25vw;
+  max-width:25vw;
 }
 #pages{
   display:flex;
@@ -55,9 +55,20 @@ html {
 #start-page h1{
   margin-bottom: 10vh;
 }
+/* WIN PAGE */
+#win-img{
+  width: 70%;
+}
+#win-container{
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 25vw;
+    align-items: center;
+}
 /* LOSE PAGE */
 
-#restart-btn-lose{
+#restart-btn-win,#restart-btn-lose{
   width:20vw;
   margin:30px 0;
   padding: 1.3em 3em;
@@ -100,7 +111,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-#word-start-btn,#guess-btn-words,#restart-btn, #guess-btn,#start{
+#restart-language-btn,#spanish-btn,#select-language-btn,#restart-difficulty,#select-difficulty-btn, #difficult-btn,#restart-btn-wordl,#word-start-btn,#guess-btn-words,#restart-btn, #guess-btn,#start{
   padding: 1.3em 3em;
     font-size: 1rem;
     text-transform: uppercase;
@@ -117,28 +128,39 @@ input::-webkit-inner-spin-button {
     padding:0.6em 1.45em 0.7em;
     margin: 10px 0;
 }
-#word-start-btn:hover,#guess-btn-words:hover,#restart-btn-lose:hover,#restart-btn:hover, #guess-btn:hover, #start:hover {
+#restart-language-btn:hover,#spanish-btn:hover,#select-language-btn:hover,#restart-difficulty:hover,#select-difficulty-btn:hover,
+#difficult-btn:hover,#restart-btn-win:hover,#restart-btn-wordl:hover,#word-start-btn:hover,#guess-btn-words:hover,#restart-btn-lose:hover,#restart-btn:hover, #guess-btn:hover, #start:hover {
     background-color: #79d2ae;
     box-shadow: 0px 15px 20px rgba(83, 180, 141, 0.4);
     color: rgb(249, 242, 242);
     transform: translateY(-7px);
 }
-#restart-btn:hover {
+#restart-language-btn:hover,#restart-difficulty:hover,#restart-btn-wordl:hover,#restart-btn:hover {
+  opacity: 1;
   background-color: #e68b90;
   box-shadow: 0px 15px 20px #e68b90;
   color: rgb(249, 242, 242);
   transform: translateY(-7px);
 }
-#word-start-btn:hover,#restart-btn-lose:hover,#restart-btn:hover,
-#guess-btn:hover,
-#start:hover {
- transform: translateY(-1px);
-}
-#word-start-btn,#start{
+#spanish-btn,#select-language-btn,#select-difficulty-btn,
+#difficult-btn,#word-start-btn,#start{
   font-size: 1.5rem;
   font-weight: bolder;
   color:#616060;
   margin-bottom: 30vh;
+}
+#difficult-btn:hover{
+  background-color: #f7e7ab;
+  box-shadow: 0px 15px 20px #e6d88b;
+  transform: translateY(-7px);
+  color:#616060
+}
+#spanish-btn:hover{
+background-color: #f7e7ab;
+color:#616060;
+}
+#restart-language-btn,#restart-difficulty,#restart-btn{
+  opacity: 0.5;
 }
 /* LEFT SIDE */
 #left-page{
@@ -275,6 +297,46 @@ ul li{
   color: rgb(249, 242, 242);
   transform: translateY(-7px);
 }
+/* DIFFICULTY PAGE */
+#difficulty-header{
+  margin-top:20vh;
+  margin-bottom:10px;
+}
+#start,#difficult-btn,#restart-difficulty{
+  margin:10px;
+}
+#difficulty-container{
+    height: 50%;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      row-gap: 20px;
+}
+/* LANGUAGE PAGE */
+#difficulty-header-words {
+  margin-top: 20vh;
+  margin-bottom: 10px;
+}
+
+#word-start-btn,
+#spanish-btn,
+#restart-language-btn{
+  margin: 10px;
+}
+
+#difficulty-container-words {
+  height: 50%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 20px;
+}
 /* CENTRAL PAGE*/
 #table-container{
   height:45vh;
@@ -391,6 +453,11 @@ h2{
   justify-content: center;
 }
 #wordl-page-container{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+#wordl-central-page {
   display: flex;
     align-items: center;
     flex-direction: column;
@@ -398,6 +465,7 @@ h2{
 #wordl-title {
   margin: 20px 0;
   text-align: center;
+  font-size: 1.3rem;
 }
 #game-board {
   display: flex;
@@ -405,18 +473,18 @@ h2{
   flex-direction: column;
 }
 #word-input{
-  margin-top: 20px;
+  margin-top: 15px;
   background: #fff;
     color: #525865;
     border-radius: 45px;
     border: 1px solid #d1d1d1;
     box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
-    max-width: 20vw;
+    width:90%;
     font-family: inherit;
-    font-size: 1.5em;
+    font-size: 1.2em;
     line-height: 1.45;
     outline: none;
-    padding: 0.6em 1em 0.7em;
+    padding: 0.6em;
     -webkit-transition: .18s ease-out;
     -moz-transition: .18s ease-out;
     -o-transition: .18s ease-out;
@@ -424,8 +492,8 @@ h2{
     text-align: center;
 }
 #guess-btn-words {
-  padding: 1em 1em;
-  font-size: 1.5rem;
+  padding: 0.6em;
+  font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
@@ -437,9 +505,14 @@ h2{
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  padding: 0.6em 1.45em 0.7em;
-  margin: 10px 0;
-  width: 20vw;
+  padding: 0.6em;
+  margin-top: 10px;
+  width: 90%;
+}
+#restart-btn-wordl{
+ margin-top:0;
+ width:90%;
+ opacity: 0.5;
 }
 .letter-box {
   border: 2px solid gray;
@@ -463,11 +536,36 @@ h2{
   background-color: #79d2ae;
 }
 .incorrect-letter-box {
-  background-color: #eaeaea;
+  background-color: #f2f2f2;
 }
 .almost-letter-box{
-  background-color: #e6c68b;
+  background-color: #eae0a0;
 }
 .letter-row {
   display: flex;
+}
+/* KEYBOARD CSS */
+#keyboard-cont {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#keyboard-cont div {
+  display: flex;
+}
+
+.second-row {
+  margin: 0.5rem 0;
+}
+
+.keyboard-button {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  margin: 0 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: #fffdfd;
 }

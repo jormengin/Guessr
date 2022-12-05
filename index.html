@@ -20,16 +20,34 @@
     </div> 
         <!-- WIN PAGE -->
         <div id="win-page">
+          <div id="win-container">
         <h1>YOU ARE A GENIUS</h1>
         <img id="win-img" src="https://media.tenor.com/3He15_WUl40AAAAC/genius-think.gif">
         <button id="restart-btn-win">Restart!</button>
+        </div>
     </div>
     <div id="start-page">
       <main>
         <h1>What do you want to Guess?</h1>
         <p></p>
-        <button id="start">START NUMBERS</button>
-        <button id="word-start-btn">START WORDS</button>
+        <button id="select-difficulty-btn">START NUMBERS</button>
+        <button id="select-language-btn">START WORDS</button>
+      </main>
+    </div>
+    <div id="select-difficulty-page" class="hidden">
+       <main id="difficulty-container">
+        <h1 id="difficulty-header">How difficult you want it?</h1>
+        <button id="start" class="diff-page-btn">EASY</button>
+        <button id="difficult-btn" class="diff-page-btn">difficult</button>
+        <button id="restart-difficulty" class="diff-page-btn">Back to main menu</button>
+      </main>
+    </div>
+    <div id="select-language-page-words" class="hidden">
+       <main id="difficulty-container-words">
+        <h1 id="difficulty-header-words">In which language do you want play?</h1>
+        <button id="word-start-btn">ENGLISH</button>
+        <button id="spanish-btn" >CASTELLANO</button>
+        <button id="restart-language-btn" >Back to main menu</button>
       </main>
     </div>
     <div id="main-page" class="hidden">
@@ -88,6 +106,43 @@
     <!-- WORDL PAGE -->
      <div id="wordl-page" class="hidden">
       <div id="wordl-page-container">
+        <div id="wordl-left-page" class="page">
+          <div id="keyboard-cont">
+        <div class="first-row">
+            <button class="keyboard-button" id="Q">q</button>
+            <button class="keyboard-button" id="w">w</button>
+            <button class="keyboard-button" id="e">e</button>
+            <button class="keyboard-button" id="r">r</button>
+            <button class="keyboard-button" id="T">t</button>
+            <button class="keyboard-button" id="y">y</button>
+            <button class="keyboard-button" id="u">u</button>
+            <button class="keyboard-button" id="i">i</button>
+            <button class="keyboard-button" id="o">o</button>
+            <button class="keyboard-button" id="p">p</button>
+        </div>
+        <div class="second-row">
+            <button class="keyboard-button" id="a">a</button>
+            <button class="keyboard-button" id="s">s</button>
+            <button class="keyboard-button" id="d">d</button>
+            <button class="keyboard-button" id="f">f</button>
+            <button class="keyboard-button" id="g">g</button>
+            <button class="keyboard-button" id="h">h</button>
+            <button class="keyboard-button" id="j">j</button>
+            <button class="keyboard-button" id="k">k</button>
+            <button class="keyboard-button" id="l">l</button>
+        </div>
+        <div class="third-row">
+            <button class="keyboard-button" id="z">z</button>
+            <button class="keyboard-button" id="x">x</button>
+            <button class="keyboard-button" id="c">c</button>
+            <button class="keyboard-button" id="v">v</button>
+            <button class="keyboard-button" id="b">b</button>
+            <button class="keyboard-button" id="n">n</button>
+            <button class="keyboard-button" id="m">m</button>
+        </div>
+    </div>
+        </div>
+        <div id="wordl-central-page" class="page">
         <h1 id="wordl-title">Can you guess the word?</h1>
         <div id="game-board">
           <div class="letter-row" id="letter-row-1">
@@ -130,13 +185,15 @@
         </div>
         <input class="word-input" id="word-input" type="text" maxlength="5" placeholder="*    *    *    *    *"/>
         <button id="guess-btn-words">Try to guess!</button>
-        <!-- <button id="restart-btn">Restart!</button>
-        </div> -->
+        <button id="restart-btn-wordl">Restart!</button>
+        </div>
+        <div id="word-right-page" class="page"></div>
     </div>
 
     <!-- LOSE PAGE -->
     <script src="js/game.js"></script>
     <script src="js/wordldata.js"></script>
+    <script src="js/wordsdataspanish.js"></script>
     <script src="js/wordl.js"></script>
     <script src="js/numbergame.js"></script>
     <script src="js/scripts.js"></script>

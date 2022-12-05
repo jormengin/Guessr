@@ -1,9 +1,10 @@
 class Game {
-  constructor() {
+  constructor(levelNumbers) {
     this.userAttempts = 0;
     this.currentTime = 0;
     this.intervalID = null;
     this.score = 0; 
+    this.levelNumbers = levelNumbers;
   }
 
   _timer() {
