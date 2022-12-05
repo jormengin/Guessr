@@ -68,7 +68,9 @@ class Wordle extends Game {
       }, delay);
     }
   }
-
+  _printKeyboard() {
+  
+}
   _pickRandomWord() {
     const randomIndex = Math.floor(Math.random() * wordsArray.length);
     this.secretWord = wordsArray[randomIndex].toUpperCase();

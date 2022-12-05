@@ -11,6 +11,7 @@ window.onload = function () {
   const selectLanguageBtn = document.getElementById("select-language-btn");
   const restartButton2 = document.getElementById("restart-btn-lose");
   const restartButtonWin = document.getElementById('restart-btn-win');
+  const darkmodeBtn = document.getElementById("darkmode-btn");
   const discardBtn = document.getElementsByClassName("discard-btn");
   const wordStartButton = document.getElementById('word-start-btn');
   const wordStartBtnSpanish = document.getElementById("spanish-btn");
@@ -52,6 +53,7 @@ window.onload = function () {
 }
   wordStartButton.onclick = function () {
     languagePage.style = "display: none";
+    document.getElementById("n").style = "display: none";
     document.getElementById("wordl-page").classList.toggle("shown");
     const wordGame = new Wordle();
     wordGuessButton.onclick = function () {
@@ -88,11 +90,15 @@ window.onload = function () {
   }
   restartButtonDifficulty.onclick = function () {
     location.reload();
-   
     document.getElementById("main-page").classList.toggle("shown");
     return false;
   };
-  
+
+  darkmodeBtn.onclick = function () {
+    document.getElementById('body').classList.replace("body-light",'body-dark');
+    document.getElementById("nav").classList.replace("nav-light", "nav-dark");
+    return false;
+  }
 
   arrButtons.forEach((element) => {
     element.addEventListener("click", () => {
