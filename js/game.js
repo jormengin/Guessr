@@ -4,7 +4,6 @@ class Game {
     this.currentTime = 0;
     this.intervalID = null;
     this.score = 0; 
-    this.levelNumbers = levelNumbers;
   }
 
   _timer() {

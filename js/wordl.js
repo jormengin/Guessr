@@ -12,6 +12,7 @@ class Wordle extends Game {
     this.userWordToPrint = [];
   }
   checkWord() {
+    this.userAttempts++;
     console.log(this.secretWord)
     this.userWordToPrint = [];
     this.numberCorrectGuesses = 0;
@@ -46,31 +47,38 @@ class Wordle extends Game {
           this.userWordToPrint.push(letterObject);
         }
       }
-      this._asyncPrinter();
-      this._checkIfWinWords();
     }
+    this._getScore();
+    document.getElementById("score-wordl").innerHTML = this.score;
+    this._asyncPrinter();
+    this._checkIfWinWords();
     this.numberOfGuesses--;
     this._checkIfLostWords();
+    console.log(this.userAttempts)
+    console.log(this.currentTime)
   }
 
   _asyncPrinter() {
+    console.log(this.userWordToPrint);
     let row =
       document.getElementsByClassName("letter-row")[6 - this.numberOfGuesses];
     for (let i = 0; i < this.userWordToPrint.length; i++) {
-      console.log(this.userWordToPrint[i].letter);
-      let delay = 200 ^ i/10;
+      let delay = 250 * i;
       setTimeout(() => {
         let box = row.children[i];
         box.innerHTML = this.userWordToPrint[i].letter;
         box.classList.add(this.userWordToPrint[i].color);
-        let buttonToChange = document.getElementById(this.userWordToPrint[i].letter.value);
-        buttonToChange.classList.add(this.userWordToPrint[i].color);
       }, delay);
     }
   }
-  _printKeyboard() {
-  
-}
+  // _printKeyboard() {
+  // let buttonToChange = document.getElementById(
+  //   this.userWordToPrint[i].letter
+  // );
+//   buttonToChange.classList.add(this.userWordToPrint[i].color);
+//   console.log(buttonToChange);
+//   console.log(this.userWordToPrint[i].letter.value);
+// }
   _pickRandomWord() {
     const randomIndex = Math.floor(Math.random() * wordsArray.length);
     this.secretWord = wordsArray[randomIndex].toUpperCase();

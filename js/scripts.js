@@ -17,7 +17,9 @@ window.onload = function () {
   const wordStartBtnSpanish = document.getElementById("spanish-btn");
   const restartButtonDifficulty = document.getElementById('restart-difficulty');
   const selectDifficultyBtn = document.getElementById('select-difficulty-btn');
-  var arrButtons = [...discardBtn];
+  var arrButtons = [...discardBtn]
+  const keyboardBtn = document.getElementsByClassName('keyboard-button')
+  var arrKeyboard = [...keyboardBtn];
 
   startButton.onclick = function () {
     difficultyPage.style = "display: none";
@@ -53,7 +55,6 @@ window.onload = function () {
 }
   wordStartButton.onclick = function () {
     languagePage.style = "display: none";
-    document.getElementById("n").style = "display: none";
     document.getElementById("wordl-page").classList.toggle("shown");
     const wordGame = new Wordle();
     wordGuessButton.onclick = function () {
@@ -94,15 +95,9 @@ window.onload = function () {
     return false;
   };
 
-  darkmodeBtn.onclick = function () {
-    document.getElementById('body').classList.replace("body-light",'body-dark');
-    document.getElementById("nav").classList.replace("nav-light", "nav-dark");
-    return false;
-  }
-
   arrButtons.forEach((element) => {
     element.addEventListener("click", () => {
-      console.log('click');
+      console.log('click prueba');
       console.log(element);
       if (element.classList.contains('white')) {
         element.classList.replace('white', 'red')
@@ -113,4 +108,18 @@ window.onload = function () {
       }
     });
   })
+
+  arrKeyboard.forEach((element) => {
+    element.addEventListener("click", () => {
+      console.log("click");
+      console.log(element);
+      if (element.classList.contains("white")) {
+        element.classList.replace("white", "red");
+      } else if (element.classList.contains("red")) {
+        element.classList.replace("red", "green");
+      } else {
+        element.classList.replace("green", "white");
+      }
+    });
+  });
 };
