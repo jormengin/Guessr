@@ -625,6 +625,12 @@ h2{
 #score-wordl{
   font-size: 1.5rem;
 }
+#mute-btn{
+  border-radius: 9999px;
+  width:20px;
+  height:20px;
+  background-color: aqua;
+}
 
 /* PUZZLE GAME */
 

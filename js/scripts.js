@@ -20,6 +20,8 @@ window.onload = function () {
   var arrButtons = [...discardBtn]
   const keyboardBtn = document.getElementsByClassName('keyboard-button')
   var arrKeyboard = [...keyboardBtn];
+  
+  
 
   startButton.onclick = function () {
     difficultyPage.style = "display: none";
@@ -34,8 +36,7 @@ window.onload = function () {
     startPage.style = "display: none";
     document.getElementById("puzzle-page").classList.toggle("shown");
     const puzzleGame = new PuzzleGame();
-    guessButton.onclick = function () {
-    };
+    console.log(puzzleGame);
     puzzleGame.puzzleStart();
   };
 

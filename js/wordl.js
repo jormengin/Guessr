@@ -11,6 +11,7 @@ class Wordle extends Game {
     this.numberCorrectGuesses = 0;
     this.userWordToPrint = [];
     this.language = '';
+    this.mute = false;
   }
   checkWord() {
     console.log(this.language)
@@ -62,6 +63,7 @@ class Wordle extends Game {
     this._getScore();
     document.getElementById("score-wordl").innerHTML = this.score;
     this._asyncPrinter();
+    this._printKeyboard();
     this._checkIfWinWords();
     this.numberOfGuesses--;
     this._checkIfLostWords();
@@ -74,22 +76,28 @@ class Wordle extends Game {
     let row =
       document.getElementsByClassName("letter-row")[6 - this.numberOfGuesses];
     for (let i = 0; i < this.userWordToPrint.length; i++) {
-      let delay = 250 * i;
+      let delay = 250* i;
       setTimeout(() => {
         let box = row.children[i];
         box.innerHTML = this.userWordToPrint[i].letter;
         box.classList.add(this.userWordToPrint[i].color);
+        if (!this.mute=== true){
+        typeSound.play()
+      }
       }, delay);
     }
   }
-  // _printKeyboard() {
-  // let buttonToChange = document.getElementById(
-  //   this.userWordToPrint[i].letter
-  // );
-//   buttonToChange.classList.add(this.userWordToPrint[i].color);
-//   console.log(buttonToChange);
-//   console.log(this.userWordToPrint[i].letter.value);
-// }
+  _printKeyboard() {
+    for (let i = 0; i < this.userWordToPrint.length; i++) {
+      let delay = 250 * i;
+      setTimeout(() => {
+        let buttonToChange = document.getElementById(
+          this.userWordToPrint[i].letter
+        );
+        buttonToChange.classList.add(this.userWordToPrint[i].color);
+      },delay)
+    }
+  }
   _pickRandomWord() {
     const randomIndex = Math.floor(Math.random() * wordsArray.length);
     this.secretWord = wordsArray[randomIndex].toUpperCase();
@@ -104,6 +112,7 @@ class Wordle extends Game {
   }
   _checkIfWinWords() {
     if (this.numberCorrectGuesses === 5) {
+      returnSound.play();
       setTimeout(() => {
         document.getElementById("wordl-page").style = "display: none";
         document.getElementById("win-page").style = "display:flex";
@@ -120,12 +129,14 @@ class Wordle extends Game {
     }
   }
   wordStart() {
+    muteBtn.onclick = this.mutePage();
     this._pickRandomWord();
     document.getElementById("start-page").style = "display: none";
     this._timer();
     this.language='english'
   }
   wordStartSpanish() {
+    muteBtn.onclick = this.mutePage();
     this._pickRandomWordSpanish();
     document.getElementById("start-page").style = "display: none";
     this._timer();
@@ -133,7 +144,5 @@ class Wordle extends Game {
     document.getElementById('wordl-title').innerHTML = 'Adivina la palabra';
     document.getElementById("guess-btn-words").innerHTML = "Intento";
     document.getElementById("restart-btn-wordl").innerHTML = "Reinicio";
-
-
   }
 }
