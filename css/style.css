@@ -4,7 +4,11 @@
 }
 
 /* Basic styles, change according to your style */
-
+ul li {
+  padding: 10px;
+  border: 2px;
+  border-radius: 5px;
+}
 html {
   width:100vw;
   height: 100vh;
@@ -109,7 +113,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-#restart-language-btn,#spanish-btn,#select-language-btn,#restart-difficulty,#select-difficulty-btn, #difficult-btn,#restart-btn-wordl,#word-start-btn,#guess-btn-words,#restart-btn, #guess-btn,#start{
+#puzzle-game-btn,#restart-language-btn,#spanish-btn,#select-language-btn,#restart-difficulty,#select-difficulty-btn, #difficult-btn,#restart-btn-wordl,#word-start-btn,#guess-btn-words,#restart-btn, #guess-btn,#start{
   padding: 1.3em 3em;
     font-size: 1rem;
     text-transform: uppercase;
@@ -126,7 +130,7 @@ input::-webkit-inner-spin-button {
     padding:0.6em 1.45em 0.7em;
     margin: 10px 0;
 }
-#restart-language-btn:hover,#spanish-btn:hover,#select-language-btn:hover,#restart-difficulty:hover,#select-difficulty-btn:hover,
+#puzzle-game-btn:hover,#restart-language-btn:hover,#spanish-btn:hover,#select-language-btn:hover,#restart-difficulty:hover,#select-difficulty-btn:hover,
 #difficult-btn:hover,#restart-btn-win:hover,#restart-btn-wordl:hover,#word-start-btn:hover,#guess-btn-words:hover,#restart-btn-lose:hover,#restart-btn:hover, #guess-btn:hover, #start:hover {
     background-color: #79d2ae;
     box-shadow: 0px 15px 20px rgba(83, 180, 141, 0.4);
@@ -140,7 +144,7 @@ input::-webkit-inner-spin-button {
   color: rgb(249, 242, 242);
   transform: translateY(-7px);
 }
-#spanish-btn,#select-language-btn,#select-difficulty-btn,
+#puzzle-game-btn,#spanish-btn,#select-language-btn,#select-difficulty-btn,
 #difficult-btn,#word-start-btn,#start{
   font-size: 1.5rem;
   font-weight: bolder;
@@ -154,12 +158,20 @@ input::-webkit-inner-spin-button {
   color:#616060
 }
 #spanish-btn:hover{
-background-color: #f7e7ab;
-box-shadow: 0px 15px 20px #e6d88b;
+background-color: #f6e4b0;
+box-shadow: 0px 15px 20px #fcf2d9;
 color:#616060;
+}
+#puzzle-game-btn:hover{
+  background-color: rgb(204, 154, 223);
+    box-shadow: 0px 15px 20px rgb(235, 193, 250);
 }
 #restart-language-btn,#restart-difficulty,#restart-btn{
   opacity: 0.5;
+}
+#select-language-btn:hover{
+  background-color: rgb(118, 207, 244);
+  box-shadow: 0px 15px 20px rgb(177, 225, 245);
 }
 /* LEFT SIDE */
 #left-page{
@@ -206,6 +218,37 @@ ul li{
   width: 10vw;
   margin: 0 20px;
   justify-content: center;
+}
+.yellow{
+  padding: 1em 2em;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #616060;
+  background-color: #e6d88b;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  width: 45%;
+  text-align: center;
+}
+
+.yellow:hover {
+  background-color: #dbdada;
+  box-shadow: 0px 15px 20px rgba(180, 83, 83, 0.4);
+  color: rgb(249, 242, 242);
+  transform: translateY(-7px);
+}
+
+.yellow:focus {
+  background-color: #dbdada;
+  box-shadow: 0px 15px 20px rgba(83, 180, 141, 0.4);
+  color: rgb(249, 242, 242);
+  transform: translateY(-7px);
 }
 .white{
   padding: 1em 2em;
@@ -283,16 +326,16 @@ ul li{
   text-align: center;
 }
 .green:hover {
-  background-color: #f5f5f5;
-  box-shadow: 0px 15px 20px #dbdada;
+  background-color: #e6d88b;
+  box-shadow: 0px 15px 20px #eae0a0;
   color: #616060;
   transform: translateY(-7px);
   border:#acacac;
   border-style: solid;
 }
 .green:focus {
-  background-color: #f5f5f5;
-  box-shadow: 0px 15px 20px #d1d1d1;
+  background-color: #e6d88b;
+  box-shadow: 0px 15px 20px #eae0a0;
   color: rgb(249, 242, 242);
   transform: translateY(-7px);
 }
@@ -415,7 +458,7 @@ h2{
   margin-bottom: 20vh;
 }
 #score{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 #notes-input {
@@ -548,6 +591,7 @@ h2{
 .letter-row {
   display: flex;
 }
+
 /* KEYBOARD CSS */
 #keyboard-cont {
   margin: 1rem 0;
@@ -578,3 +622,33 @@ h2{
   cursor: pointer;
   text-transform: uppercase;
 }
+#score-wordl{
+  font-size: 1.5rem;
+}
+
+/* PUZZLE GAME */
+
+#puzzle-page{
+  justify-content: center;
+}
+#puzzle-container{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7vh;;
+}
+#board{
+  height:60vh;
+  width: 60vh;
+  background-color: #ebc4c6;
+  margin:0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: 18px solid #f0aeb1;
+  margin:10px
+}
+#board img {
+  width: 20vh;
+  height: 20vh;
+}
+

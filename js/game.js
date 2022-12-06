@@ -1,5 +1,5 @@
 class Game {
-  constructor(levelNumbers) {
+  constructor() {
     this.userAttempts = 0;
     this.currentTime = 0;
     this.intervalID = null;

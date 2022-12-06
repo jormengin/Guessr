@@ -10,8 +10,10 @@ class Wordle extends Game {
     this.letterPosition = 0;
     this.numberCorrectGuesses = 0;
     this.userWordToPrint = [];
+    this.language = '';
   }
   checkWord() {
+    console.log(this.language)
     this.userAttempts++;
     console.log(this.secretWord)
     this.userWordToPrint = [];
@@ -20,14 +22,23 @@ class Wordle extends Game {
       .getElementsByClassName("word-input")[0]
       .value.toUpperCase();
     if (
-      this.userWord.length !== 5 //||
-      // typeof this.userWord !== "string" ||
-      // !wordsArray.includes(this.userWord.toLocaleLowerCase()&&!arrNoDiacritic.includes(this.userWord.toLocaleLowerCase()))
-    ) {
+      this.userWord.length !== 5 ||
+      typeof this.userWord !== "string") {
       alert("Introduce a valid Word!");
       return;
     }
-    this.userWordArr = this.userWord.split("");
+    if (this.language === 'spanish' && !arrNoDiacritic.includes(this.userWord.toLocaleLowerCase())
+    ) {
+      alert('Introduce una palabra válida');
+      return
+    } else if (this.language === 'english' && !wordsArray.includes(this.userWord.toLocaleLowerCase())
+    ) {
+      alert('Introduce a valid Word');
+      return
+    }
+
+
+      this.userWordArr = this.userWord.split("");
     for (let i = 0; i < this.userWordArr.length; i++) {
       let letterObject = {};
       let letterCheck = this.secretWordArr.indexOf(this.userWordArr[i]);
@@ -112,10 +123,17 @@ class Wordle extends Game {
     this._pickRandomWord();
     document.getElementById("start-page").style = "display: none";
     this._timer();
+    this.language='english'
   }
   wordStartSpanish() {
     this._pickRandomWordSpanish();
     document.getElementById("start-page").style = "display: none";
     this._timer();
+    this.language = 'spanish';
+    document.getElementById('wordl-title').innerHTML = 'Adivina la palabra';
+    document.getElementById("guess-btn-words").innerHTML = "Intento";
+    document.getElementById("restart-btn-wordl").innerHTML = "Reinicio";
+
+
   }
 }

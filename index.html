@@ -32,6 +32,7 @@
         <p></p>
         <button id="select-difficulty-btn">START NUMBERS</button>
         <button id="select-language-btn">START WORDS</button>
+         <button id="puzzle-game-btn">START PUZZLE</button>
       </main>
     </div>
     <div id="select-difficulty-page" class="hidden">
@@ -191,12 +192,23 @@
         </div>
         <div id="word-right-page" class="page"></div>
     </div>
+    </div>
+    <div id="puzzle-page" class="hidden">
+      <div id="puzzle-container">
+      <h2>Solve the puzzle</h2>
+      <div id="board"></div>
+      <h4>Score: <span id="score-puzzle">0</span></h4>
+      </div>
+    </div>
+
+    
 
     <!-- LOSE PAGE -->
     <script src="js/game.js"></script>
     <script src="js/wordldata.js"></script>
     <script src="js/wordsdataspanish.js"></script>
     <script src="js/wordl.js"></script>
+    <script src="js/puzzle.js"></script>
     <script src="js/numbergame.js"></script>
     <script src="js/scripts.js"></script>
   </body>
