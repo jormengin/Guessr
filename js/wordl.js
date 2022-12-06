@@ -129,14 +129,19 @@ class Wordle extends Game {
     }
   }
   wordStart() {
-    muteBtn.onclick = this.mutePage();
+   muteBtn.onclick = () => {
+     this.mutePage();
+   };
     this._pickRandomWord();
     document.getElementById("start-page").style = "display: none";
     this._timer();
     this.language='english'
   }
   wordStartSpanish() {
-    muteBtn.onclick = this.mutePage();
+    muteBtn.onclick =()=> {
+      this.mutePage();
+    }
+    console.log(muteBtn);
     this._pickRandomWordSpanish();
     document.getElementById("start-page").style = "display: none";
     this._timer();
