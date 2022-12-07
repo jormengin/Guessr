@@ -16,6 +16,7 @@ window.onload = function () {
   const puzzleGameBtn = document.getElementById("puzzle-game-btn");
   const wordStartBtnSpanish = document.getElementById("spanish-btn");
   const backToMenuBtn = document.getElementById("back-to-menu");
+  const letterBox = document.querySelectorAll(".letter-box");
   const restartButtonDifficulty = document.getElementById('restart-difficulty');
   const selectDifficultyBtn = document.getElementById('select-difficulty-btn');
   const restartWordlBtn = document.getElementById("restart-btn-wordl");
@@ -67,6 +68,7 @@ window.onload = function () {
   wordStartButton.onclick = function () {
     languagePage.style = "display: none";
     document.getElementById("wordl-page").classList.toggle("shown");
+    document.getElementById("Ñ").style.display= "none";
     const wordGame = new Wordle();
     wordGuessButton.onclick = function () {
       wordGame.checkWord();
@@ -88,12 +90,7 @@ window.onload = function () {
     document.getElementById("main-page").classList.toggle("shown");
     return false;
   };
-  restartWordlBtn.onclick = function () {
-    location.reload();
-    startPage.style = "display: none";
-    document.getElementById("main-page").classList.toggle("shown");
-    return false;
-  };
+  
   backToMenuBtn.onclick = function () {
     location.reload();
     startPage.style = "display: none";
@@ -125,22 +122,25 @@ window.onload = function () {
 
   arrButtons.forEach((element) => {
     element.addEventListener("click", () => {
-      console.log('click prueba');
       console.log(element);
       if (element.classList.contains('white')) {
         element.classList.replace('white', 'red')
       } else if (element.classList.contains('red')) {
         element.classList.replace('red', 'green')
-      } else {
-        element.classList.replace('green', 'white')
+      } else if (element.classList.contains("green")) {
+        element.classList.replace("green", "white");
       }
     });
   })
 
+restartWordlBtn.onclick = function () {
+  location.reload();
+  document.getElementById("main-page").classList.toggle("shown");
+  return false;
+}; 
   arrKeyboard.forEach((element) => {
     element.addEventListener("click", () => {
-      console.log("click");
-      console.log(element);
+      console.log(arrKeyboard)
       if (element.classList.contains("white")) {
         element.classList.replace("white", "red");
       } else if (element.classList.contains("red")) {
@@ -151,5 +151,7 @@ window.onload = function () {
         element.classList.replace("yellow", "white");
       }
     });
+    
   });
+ 
 };

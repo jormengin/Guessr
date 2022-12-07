@@ -10,18 +10,20 @@ ul li {
   border-radius: 5px;
 }
 html {
-  width:100%;
+  max-width:100vw;
   height: 100vh;
+  box-sizing: border-box;
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
   display: flex;
-  justify-content:space-between;
-  color:#616060
+  color:#616060;
+  padding:0;
 }
 #win-page,#start-page,
 #lose-page {
+  box-sizing: border-box;
   height: 100vh;
-  width: 100vw;
+  min-width: 100vw;
   display: flex;
   justify-content:space-evenly;
   align-items: center;
@@ -329,11 +331,11 @@ ul li{
   text-align: center;
 }
 .green:hover {
-  background-color: #e6d88b;
-  box-shadow: 0px 15px 20px #eae0a0;
+  background-color: #f6f6f6;
+  box-shadow: 0px 15px 20px #d6d6d6;
   color: #616060;
   transform: translateY(-7px);
-  border:#acacac;
+  border:#ededed;
   border-style: solid;
 }
 .green:focus {
@@ -591,6 +593,9 @@ h2{
 .almost-letter-box{
   background-color: #eae0a0;
 }
+.blank-letter-box {
+  background-color: #efefef;
+}
 .letter-row {
   display: flex;
 }
@@ -655,7 +660,7 @@ h2{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #616060;
+  background-color: #939393;
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px;
@@ -766,11 +771,21 @@ input:checked+.slider:after {
   display: flex;
   flex-wrap: wrap;
   border: 18px solid #f0aeb1;
-  margin:10px
+  margin:10px 60px
 }
 #board img {
   width: 171px;
   height: 171px;
   border: 1px solid #616060;
+}
+#puzzle-container{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  row-gap: 60px;
+}
+#puzzle-right-page{
+  width:20vw;
 }
 

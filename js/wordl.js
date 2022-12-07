@@ -141,7 +141,6 @@ class Wordle extends Game {
     muteBtn.onclick =()=> {
       this.mutePage();
     }
-    console.log(muteBtn);
     this._pickRandomWordSpanish();
     document.getElementById("start-page").style = "display: none";
     this._timer();

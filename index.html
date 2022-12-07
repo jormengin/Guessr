@@ -39,10 +39,11 @@
     <div id="start-page">
       <main>
         <h1>What do you want to Guess?</h1>
-        <p></p>
+        <div id="main-page-container">
         <button id="select-difficulty-btn">START NUMBERS</button>
         <button id="select-language-btn">START WORDS</button>
          <button id="puzzle-game-btn">START PUZZLE</button>
+         </div>
       </main>
     </div>
     <div id="select-difficulty-page" class="hidden">
@@ -215,17 +216,28 @@
     </div>
     </div>
     <div id="puzzle-page" class="hidden">
-      <div id="puzzle-left-page"><h2>Solve the puzzle</h2></div>
       <div id="puzzle-container">
-      
+
+        <div id="left-page-puzzle">
+      <div id="instructions-container-wordl"><h2>Instructions</h2>
+        <p>1. The goal is to guess a random word.</p>
+        <p>2. You have a total of six tries, or you will automatically lose.</p>
+        <p>3. The words have to real.</p>
+        <p>4. Green = correct word and position</p>
+        <p>4. Green = correct word but incorrect position</p>
+        <p>5. Grey = incorrect word.</p>
+          </div>
+          </div>
+          <div id="central-page-puzzle">
       <div id="board">
         <!-- <img src="" alt="" id="0-0"> -->
       </div>
-      
       </div>
       <div id="puzzle-right-page">
         <h4>Score: <span id="score-puzzle">0</span></h4>
       </div>
+      </div>
+      
     </div>
 
     
