@@ -11,11 +11,21 @@
   </head>
   <body id="body" class="body-light">
     <nav>
+      <button id="back-to-menu" class="nav-btn">To menu</button>
       <h1 id="h1nav" class="nav-light">Guessr</h1>
+      <div id="nav-btn-container">
+      <label class="switch nav-btn " >
+  <input type="checkbox" id="mute-btn">
+  <span class="slider"></span>
+  </label>
+  </div>
+  
+      <!-- <div id="mute-btn"></div> -->
     </nav>
     <div id="lose-page">
         <h1>YOU LOSE LMAO</h1>
         <img id="lose-img" src="https://media.tenor.com/SwPnvd4lvLkAAAAd/stupid-yoda.gif">
+        
         <button id="restart-btn-lose">Restart!</button>
     </div> 
         <!-- WIN PAGE -->
@@ -58,8 +68,9 @@
         <p>1. The goal is to guess a randomly generated four digit number.</p>
         <p>2. You have a total of ten tries, or you will automatically lose.</p>
         <p>3. The numbers are unique, cannot be repeated.</p>
-        <p>4. 1 Mate = 1 correct number and correct position</p>
-        <p>5. 1 Check = 1 correct number and incorrect position.</p>
+        <p>4. 🟢 = 1 correct number and correct position</p>
+        <p>5. 🟡 = 1 correct number and incorrect position.</p>
+        <p>5. 🔴  = incorrect number and incorrect position.</p>
           </div>
         <div id="discard-buttons-container">
           <ul>
@@ -144,7 +155,7 @@
         </div>
     </div>
     <h4>Score: <span id="score-wordl">0</span></h4>
-    <div id="mute-btn"></div>
+    
         </div>
         <div id="wordl-central-page" class="page">
         <h1 id="wordl-title">Can you guess the word?</h1>
@@ -191,16 +202,29 @@
         <button id="guess-btn-words">Try to guess!</button>
         <button id="restart-btn-wordl">Restart!</button>
         </div>
-        <div id="word-right-page" class="page"></div>
+        <div id="word-right-page" class="page">
+          <div id="instructions-container-wordl"><h2>Instructions</h2>
+        <p>1. The goal is to guess a random word.</p>
+        <p>2. You have a total of six tries, or you will automatically lose.</p>
+        <p>3. The words have to real.</p>
+        <p>4. Green = correct word and position</p>
+        <p>4. Green = correct word but incorrect position</p>
+        <p>5. Grey = incorrect word.</p>
+          </div>
+        </div>
     </div>
     </div>
     <div id="puzzle-page" class="hidden">
+      <div id="puzzle-left-page"><h2>Solve the puzzle</h2></div>
       <div id="puzzle-container">
-      <h2>Solve the puzzle</h2>
+      
       <div id="board">
-        <img src="" alt="" id="0-0">
+        <!-- <img src="" alt="" id="0-0"> -->
       </div>
-      <h4>Score: <span id="score-puzzle">0</span></h4>
+      
+      </div>
+      <div id="puzzle-right-page">
+        <h4>Score: <span id="score-puzzle">0</span></h4>
       </div>
     </div>
 

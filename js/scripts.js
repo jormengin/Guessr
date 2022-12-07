@@ -15,8 +15,10 @@ window.onload = function () {
   const wordStartButton = document.getElementById('word-start-btn');
   const puzzleGameBtn = document.getElementById("puzzle-game-btn");
   const wordStartBtnSpanish = document.getElementById("spanish-btn");
+  const backToMenuBtn = document.getElementById("back-to-menu");
   const restartButtonDifficulty = document.getElementById('restart-difficulty');
   const selectDifficultyBtn = document.getElementById('select-difficulty-btn');
+  const restartWordlBtn = document.getElementById("restart-btn-wordl");
   var arrButtons = [...discardBtn]
   const keyboardBtn = document.getElementsByClassName('keyboard-button')
   var arrKeyboard = [...keyboardBtn];
@@ -86,6 +88,18 @@ window.onload = function () {
     document.getElementById("main-page").classList.toggle("shown");
     return false;
   };
+  restartWordlBtn.onclick = function () {
+    location.reload();
+    startPage.style = "display: none";
+    document.getElementById("main-page").classList.toggle("shown");
+    return false;
+  };
+  backToMenuBtn.onclick = function () {
+    location.reload();
+    startPage.style = "display: none";
+    document.getElementById("main-page").classList.toggle("shown");
+    return false;
+  }
   restartButton2.onclick = function () {
     location.reload();
     startPage.style = "display: none";

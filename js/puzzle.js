@@ -20,6 +20,7 @@ class PuzzleGame extends Game {
         i++;
       }
     }
+    
   }
   puzzleStart() { 
     this.populateBoard();
