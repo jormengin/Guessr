@@ -219,7 +219,7 @@ ul li{
 }
 #discard-buttons-container {
   display: flex;
-  max-height: 50vh;
+  max-height: 40vh;
   width: 10vw;
   margin: 0 20px;
   justify-content: center;
@@ -271,6 +271,7 @@ ul li{
     outline: none;
     width: 45%;
     text-align: center;
+    margin:3px;
 }
 .white:hover{
       background-color: #e68b90;
@@ -387,6 +388,7 @@ ul li{
 /* CENTRAL PAGE*/
 #table-container{
   height:45vh;
+  margin-bottom: 20px;
 }
 table {
   width: 100%;
@@ -422,6 +424,7 @@ h2{
   align-items: center;
 }
 .guess-box{
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;

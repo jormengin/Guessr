@@ -137,12 +137,13 @@ restartWordlBtn.onclick = function () {
   location.reload();
   document.getElementById("main-page").classList.toggle("shown");
   return false;
-}; 
+  }; 
+  
   arrKeyboard.forEach((element) => {
     element.addEventListener("click", () => {
       console.log(arrKeyboard)
       if (element.classList.contains("white")) {
-        element.classList.replace("white", "red");
+        element.classList.replace("white", "reed");
       } else if (element.classList.contains("red")) {
         element.classList.replace("red", "green");
       } else if (element.classList.contains("green")) {

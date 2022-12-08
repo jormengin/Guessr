@@ -16,7 +16,6 @@ class Game {
     this.score = this.currentTime * this.userAttempts * 2;
   }
   mutePage() {
-    console.log('im mute page function')
     console.log(this.mute)
     if ((this.mute === false)) {
       this.mute = true;

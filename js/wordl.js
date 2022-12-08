@@ -11,7 +11,6 @@ class Wordle extends Game {
     this.numberCorrectGuesses = 0;
     this.userWordToPrint = [];
     this.language = '';
-    this.mute = false;
   }
   checkWord() {
     console.log(this.language)
@@ -37,8 +36,6 @@ class Wordle extends Game {
       alert('Introduce a valid Word');
       return
     }
-
-
       this.userWordArr = this.userWord.split("");
     for (let i = 0; i < this.userWordArr.length; i++) {
       let letterObject = {};
@@ -81,11 +78,32 @@ class Wordle extends Game {
         let box = row.children[i];
         box.innerHTML = this.userWordToPrint[i].letter;
         box.classList.add(this.userWordToPrint[i].color);
-        if (!this.mute=== true){
-        typeSound.play()
+        if (!this.mute === true) {
+          this._playSound();
+        // typeSound.play()
       }
       }, delay);
     }
+  }
+  _playSound (){
+    let random = Math.floor((Math.random() * 4)+1)
+    switch (random) {
+      case 1:
+        typeSound1.play();
+        break
+      case 2:
+        typeSound1.play();
+        break
+      case 3:
+        typeSound3.play();
+        break
+      case 4:
+        typeSound4.play();
+        break
+      default:
+        typeSound1.play();
+    }
+
   }
   _printKeyboard() {
     for (let i = 0; i < this.userWordToPrint.length; i++) {
@@ -95,7 +113,8 @@ class Wordle extends Game {
           this.userWordToPrint[i].letter
         );
         buttonToChange.classList.add(this.userWordToPrint[i].color);
-      },delay)
+      }, delay)
+      
     }
   }
   _pickRandomWord() {
@@ -123,9 +142,11 @@ class Wordle extends Game {
   }
   _checkIfLostWords() {
     if (this.numberOfGuesses === 0 && this.numberCorrectGuesses !== 5) {
-      document.getElementById("wordl-page").style = "display: none";
-      document.getElementById("lose-page").style = "display:flex";
-      this.wordStart();
+      setTimeout(() => {
+        document.getElementById("wordl-page").style = "display: none";
+        document.getElementById("lose-page").style = "display:flex";
+        this.wordStart();
+      }, 1200);
     }
   }
   wordStart() {

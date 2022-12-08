@@ -10,13 +10,18 @@ class NumberGame extends Game {
     this.guesses = 0;
     this.discardBtn = document.getElementsByClassName("discard-btn")[0];
     this.solutions = "";
+    this.correctNumbers = 0;
   }
   start() {
     this._generateRandomNumber();
     document.getElementById("start-page").style = "display: none";
+    muteBtn.onclick = () => {
+      this.mutePage();
+    };
     this._timer();
   }
   checkAttempt() {
+    this.correctNumbers=0
     this.solutions = "";
     this.userAttempts++;
     this.guesses = document
@@ -42,11 +47,15 @@ class NumberGame extends Game {
         this.solutions += "🔴";
       }
     }
+    if (!this.mute === true) {
+      pencil.play();
+    }
     this._getScore();
     document.getElementById("score").innerHTML = this.score;
     this._createNewRow();
     this._checkIfWin();
     this._checkIfLost();
+    console.log(this.score)
   }
   ///////
 
@@ -78,6 +87,9 @@ class NumberGame extends Game {
       } 
       this.solutions = `🟢${this.mates} 🟡${this.checks}`;
     }
+    if (!this.mute === true) {
+      pencil.play();
+    }
     this._getScore();
     document.getElementById("score").innerHTML = this.score;
     this._createNewRow();
@@ -87,11 +99,14 @@ class NumberGame extends Game {
 
   ////////
   _checkIfWin() {
-    if (this.mates === 4) {
-      document.getElementById("main-page").style = "display: none";
-      document.getElementById("win-page").style = "display:flex";
-      this.secretNumber = [];
-      this.start();
+    if (this.mates === 4 || this.correctNumbers === 4) {
+      setTimeout(() => {
+        document.getElementById("main-page").style = "display: none";
+        document.getElementById("win-page").style = "display:flex";
+        document.getElementById("score-win").innerHTML = this.score;
+        this.secretNumber = [];
+        this.start();
+      },1200)
     }
   }
   _createNewRow() {
@@ -120,8 +135,10 @@ class NumberGame extends Game {
   }
   _checkIfLost() {
     if (this.userAttempts === 10) {
-      document.getElementById("main-page").style = "display: none";
-      document.getElementById("lose-page").style = "display:flex";
+      setTimeout(() => {
+        document.getElementById("main-page").style = "display: none";
+        document.getElementById("lose-page").style = "display:flex";
+      }, 1200);
     }
   }
 }
