@@ -63,8 +63,6 @@ class PuzzleGame extends Game {
     console.log(currImg); //logs file path
     let otherImg = this.otherTile.src; //Error on this line of code TypeError:cannot read properties of undefined (reading "src")
     this.currTile.src = otherImg;
-    this.otherTile.src = currImg;
-    console.log(this.otherTile)
   }
 }
 

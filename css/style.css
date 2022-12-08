@@ -219,7 +219,7 @@ ul li{
 }
 #discard-buttons-container {
   display: flex;
-  max-height: 40vh;
+  max-height: 50vh;
   width: 10vw;
   margin: 0 20px;
   justify-content: center;
@@ -271,7 +271,6 @@ ul li{
     outline: none;
     width: 45%;
     text-align: center;
-    margin:3px;
 }
 .white:hover{
       background-color: #e68b90;
@@ -644,7 +643,7 @@ h2{
   display: inline-block;
 }
 .switch {
-  opacity: 0.2;
+  opacity: 0.4;
   position: relative;
   width: 120px;
   height: 34px;
@@ -663,7 +662,7 @@ h2{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #939393;
+  background-color: #8fdea9;
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px;

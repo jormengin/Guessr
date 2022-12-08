@@ -143,7 +143,7 @@ restartWordlBtn.onclick = function () {
     element.addEventListener("click", () => {
       console.log(arrKeyboard)
       if (element.classList.contains("white")) {
-        element.classList.replace("white", "reed");
+        element.classList.replace("white", "red");
       } else if (element.classList.contains("red")) {
         element.classList.replace("red", "green");
       } else if (element.classList.contains("green")) {
