@@ -5267,4 +5267,3 @@ const arrNoDiacritic = filteredWords.map(word => {
 
   return word;
 })
-console.log(arrNoDiacritic);

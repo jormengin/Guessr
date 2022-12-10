@@ -39,7 +39,6 @@ window.onload = function () {
     startPage.style = "display: none";
     document.getElementById("puzzle-page").classList.toggle("shown");
     const puzzleGame = new PuzzleGame();
-    console.log(puzzleGame);
     puzzleGame.puzzleStart();
   };
 
@@ -58,7 +57,6 @@ window.onload = function () {
     return false;
   };
   selectLanguageBtn.onclick = function () {
-    console.log('pipi');
   startPage.style = "display: none";
   document
     .getElementById("select-language-page-words")
@@ -122,7 +120,6 @@ window.onload = function () {
 
   arrButtons.forEach((element) => {
     element.addEventListener("click", () => {
-      console.log(element);
       if (element.classList.contains('white')) {
         element.classList.replace('white', 'red')
       } else if (element.classList.contains('red')) {
@@ -141,7 +138,6 @@ restartWordlBtn.onclick = function () {
   
   arrKeyboard.forEach((element) => {
     element.addEventListener("click", () => {
-      console.log(arrKeyboard)
       if (element.classList.contains("white")) {
         element.classList.replace("white", "red");
       } else if (element.classList.contains("red")) {

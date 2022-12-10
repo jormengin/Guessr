@@ -13,7 +13,6 @@ class Wordle extends Game {
     this.language = '';
   }
   checkWord() {
-    console.log(this.language)
     this.userAttempts++;
     console.log(this.secretWord)
     this.userWordToPrint = [];
@@ -64,12 +63,9 @@ class Wordle extends Game {
     this._checkIfWinWords();
     this.numberOfGuesses--;
     this._checkIfLostWords();
-    console.log(this.userAttempts)
-    console.log(this.currentTime)
   }
 
   _asyncPrinter() {
-    console.log(this.userWordToPrint);
     let row =
       document.getElementsByClassName("letter-row")[6 - this.numberOfGuesses];
     for (let i = 0; i < this.userWordToPrint.length; i++) {
