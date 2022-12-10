@@ -6,8 +6,8 @@ class PuzzleGame extends Game {
     //current clicked image, other the one we swap with
     this.currTile;
     this.otherTile;
-    this.currTileSrc = []
-    this.otherTileSrc =[]
+    this.currTileSrc = [];
+    this.otherTileSrc = [];
     this.turns = 0;
     this.imageOrder = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     this.randomOrder = [];
@@ -42,9 +42,9 @@ class PuzzleGame extends Game {
     this.populateBoard();
   }
   dragStart() {
-    this.currTile = this //image being dragged
-    console.log(this) //logs img.id and img.src "/images/4.png"
-    console.log(this.src)// logs file path users/xxxx/desktop/etc/4.png
+    this.currTile = this; //image being dragged
+    console.log(this); //logs img.id and img.src "/images/4.png"
+    console.log(this.src); // logs file path users/xxxx/desktop/etc/4.png
   }
   dragOver(e) {
     e.preventDefault();
@@ -55,15 +55,15 @@ class PuzzleGame extends Game {
   dragLeave() {}
   dragDrop() {
     this.otherTile = this; //image tile being dropped
-    console.log(this.otherTile.src ) //logs file path users/xxxxx/desktop/etc/9.png
+    this.otherTileSrc = this.otherTile.src;
+    console.log(this.otherTileSrc, 'this othertitlesrc dragdrop')
+    console.log("Other tile drop", this.otherTile);
   }
   dragEnd() {
     let currImg = this.currTile.src;
-    console.log(this.currTile) //logs currTile
-    console.log(currImg); //logs file path
-    let otherImg = this.otherTile.src; //Error on this line of code TypeError:cannot read properties of undefined (reading "src")
-    this.currTile.src = otherImg;
+    // console.log(this.currTile); //logs currTile
+    // console.log(currImg); //logs file path
+    this.otherTile.src = currImg;
+    this.currTile.src = this.otherTileSrc;
   }
 }
-
-
